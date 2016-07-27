@@ -1,0 +1,60 @@
+defaultTasks 'clean'
+
+def configStaging = [
+        awsSecretDeployKey : System.getenv('awsSecretDeployKey'),
+        awsAccessDeployKey : System.getenv('awsAccessDeployKey'),
+        awsDeployBucket : System.getenv('awsStagingBucket'),
+        awsCloudFrontId : System.getenv('awsStagingCFID'),
+]
+
+def configProduction = [
+        awsSecretDeployKey : System.getenv('awsSecretDeployKey'),
+        awsAccessDeployKey : System.getenv('awsAccessDeployKey'),
+        awsDeployBucket : System.getenv('awsProductionBucket'),
+        awsCloudFrontId : System.getenv('awsProductionCFID'),
+]
+
+task clean  << {
+    println "gradlew clean called"
+    delete "target"
+}
+
+task build(dependsOn: 'clean') << {
+    println "gradlew build called"
+    exec {
+        executable "jekyll"
+        args "build"
+    }
+}
+
+task serve(dependsOn: 'clean')  << {
+    exec {
+        executable "jekyll"
+        args "serve"
+    }
+}
+
+task deployStaging(dependsOn: ['clean', 'build'] ) << {
+    def thisConfig = configStaging
+    exec {
+
+        environment 'awsDeployBucket', thisConfig.awsDeployBucket
+        environment 'awsCloudFrontId', thisConfig.awsCloudFrontId
+        executable "s3_website"
+        args "push"
+    }
+}
+
+task deployProduction(dependsOn: ['clean', 'build'] ) << {
+    def thisConfig = configProduction
+    exec {
+        environment 'awsDeployBucket', thisConfig.awsDeployBucket
+        environment 'awsCloudFrontId', thisConfig.awsCloudFrontId
+        executable "s3_website"
+        args "push"
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14.1'
+}

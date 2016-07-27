@@ -1,0 +1,162 @@
+
+div.backstretch {
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  -o-filter: blur(7px);
+  -ms-filter: blur(7px);
+  filter: blur(7px);
+  margin: -10px; /* Added to get rid of white blur borders */
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+
+a {
+    color: #FFCC00;
+}
+
+
+.navbar-toggle.navbar-left {
+  float: left;
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+.v-align-top {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.curlyfont {
+    font-family: 'Niconne', cursive;
+    font-weight: 100 !important;
+    font-size: 2em;
+
+}
+
+.normalfont {
+  font-weight: 100 !important;
+}
+
+.qsetone {
+    color: #ffffff;
+    background-color: rgba(0,0,0,.3);
+}
+
+.qsettwo {
+    letter-spacing: 1px;
+    font-weight: 100 !important;
+    font-size: large;
+}
+
+
+
+
+.orange {
+  color: #EE6E0E;
+}
+
+.yellow {
+  color: #FFCC00
+}
+
+.site-name {
+  font-size: 2.4em;
+  font-family: 'Niconne', curisve;
+  box-sizing: border-box;
+  font-weight: 100;
+
+}
+
+a:hover {
+  color: #EE6E0E;
+}
+
+h1 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 100;
+}
+
+
+p {
+    letter-spacing: 1px;
+    font-weight: 100 !important;
+}
+
+
+.jumbotron {
+  background-color: rgba(0,0,0,.3);
+  color: #ffffff;
+  border-radius: 5px;
+  border: 0px;
+}
+
+
+.service:hover {
+    background-color: rgba(0,0,0,.5);
+}
+
+
+.panel-default {
+    background-color: rgba(0,0,0,.1);
+}
+
+.panel-body {
+    color: #fff !important;
+}
+
+.panel-heading {
+    background-color: rgba(0,0,0,.1);
+}
+
+
+.thumbnail,
+.img-thumbnail {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+}
+
+
+
+
+.navbar-default {
+  background-color: rgba(0,0,0,.1);
+  color: #ffffff;
+  border-radius: 5px;
+    border: 0px;
+
+
+
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+
+.navbar-brand,
+.navbar-nav > li > a {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .25);
+    color: #ffffff !important;
+}
+
+.navbar-nav > li > a.active
+{
+    text-decoration: underline;
+}
+
+
+.navbar-nav > li > a:hover { color:#55acee !important;
+    transition: all 0.3s ease-in-out;}
+
+
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-radius: 0;
+}

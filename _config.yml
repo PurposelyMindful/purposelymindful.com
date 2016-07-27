@@ -1,0 +1,18 @@
+# Drew Easley
+# Purposely Mindful
+# using Jekyll
+# Created: June 8, 2016
+
+title: "Purposely Mindful"
+tagline: "Holistic Counseling & Coaching"
+source: src
+destination: target
+safe: true
+encoding: utf-8
+version: "v3.0.3"
+gosquaredkey: "GSN-308531-B"
+
+collections:
+    panels:
+        output: true
+        label: panels

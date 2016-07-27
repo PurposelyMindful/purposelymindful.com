@@ -1,0 +1,31 @@
+{% include globalpre.html %}
+
+    {% include navbar.html %}
+    <div class="container container-fluid">
+
+        <div class="section">
+            <div class="jumbotron">
+                <h1 class="title text-center curlyfont">{{ page.title }}</h1>
+                {% for pagedef in page.defs %}
+                <p class="text-center">{{pagedef}}</p>
+                {% endfor %}
+            </div>
+
+            {% assign sortedpanels = site.panels | where_exp:"item", "item[page.tag]" | sort:page.tag  %}
+            {% for panel in sortedpanels  %}
+            {% assign loopindex = forloop.index | modulo: 2 %}
+
+            {% if loopindex == 1 %}
+            <div class="row">
+                <div class="col-md-6">{{ panel }}</div>
+                {% else %}
+                <div class="col-md-6">{{ panel }}</div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            
+                {{ content }}
+        </div>
+    </div>
+
+{% include globalpost.html %}

@@ -1,0 +1,21 @@
+---
+layout: even-panels
+title: Lindsay M. Easley, MA, LPC
+---
+
+    {% assign sortedpanels = site.panels | where_exp:"item", "item.aboutme" | sort:"aboutme"  %}
+    <div class="row">
+        <div class="col-md-6">
+            {% for panel in sortedpanels  %}
+            {% assign loopindex = forloop.index  %}
+
+            {% if loopindex < 5 %}
+                <div>{{ panel }}</div>
+            {% elsif loopindex == 5 %}
+                </div><div class="col-md-6">
+                <div>{{ panel }}</div>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
