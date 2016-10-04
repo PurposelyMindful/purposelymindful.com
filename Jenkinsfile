@@ -2,6 +2,7 @@ node {
 
    stage('Checkout') { // for display purposes
       checkout scm
+      bat 'bundle install'
    }
 
 /*   stage('Save and Publish Artifacts') {
