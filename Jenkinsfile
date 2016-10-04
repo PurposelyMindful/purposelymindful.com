@@ -9,11 +9,12 @@ node('ec2-win') {
    stage ('Build') {
        bat 'jekyll clean'
        bat 'jekyll build'
+       bat 'dir'
    }
 
-/*   stage('Save and Publish Artifacts') {
-       archive 'target/*.jar'
-   } */
+   stage('Archive Artifacts') {
+       archive 'target/**'
+   }
 
 
 
