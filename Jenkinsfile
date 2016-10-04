@@ -1,4 +1,4 @@
-node {
+node('ec2-win') {
 
    stage('Checkout') { // for display purposes
       checkout scm
