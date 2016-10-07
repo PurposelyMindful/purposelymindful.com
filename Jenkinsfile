@@ -7,6 +7,7 @@ node {
    stage ('Build') {
 
          if (isUnix()) {
+            sh "export PATH=/usr/local/bin:$PATH"
             sh "bundle install"
             sh "jekyll -version"
             sh "jekyll clean"
