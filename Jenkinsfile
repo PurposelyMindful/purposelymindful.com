@@ -7,6 +7,7 @@ node {
    stage ('Build') {
 
          if (isUnix()) {
+            sh "whoami"
             sh "gem install bundle"
             sh "jekyll -version"
             sh "jekyll clean"
