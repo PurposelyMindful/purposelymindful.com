@@ -8,7 +8,7 @@ node {
 
          if (isUnix()) {
             sh "whoami"
-            sh "gem install bundle"
+            sh "gem install bundle -n /usr/local/bin"
             sh "jekyll -version"
             sh "jekyll clean"
             sh "jekyll build"
