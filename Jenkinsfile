@@ -2,16 +2,18 @@ node {
 
    stage('Checkout') { // for display purposes
       checkout scm
-      bat 'bundle install'
-      bat 'jekyll -version'
    }
 
    stage ('Build') {
 
          if (isUnix()) {
+            sh "bundle install"
+            sh "jekyll -version"
             sh "jekyll clean"
             sh "jekyll build"
          } else {
+             bat 'bundle install'
+             bat 'jekyll /version'
              bat 'jekyll clean'
              bat 'jekyll build'
          }
