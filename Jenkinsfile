@@ -1,4 +1,4 @@
-node('ec2-win') {
+node {
 
    stage('Checkout') { // for display purposes
       checkout scm
@@ -7,19 +7,27 @@ node('ec2-win') {
    }
 
    stage ('Build') {
-       bat 'jekyll clean'
-       bat 'jekyll build'
-       bat 'dir'
+
+         if (isUnix()) {
+            sh "jekyll clean"
+            sh "jekyll build"
+         } else {
+             bat 'jekyll clean'
+             bat 'jekyll build'
+         }
+
    }
 
-   stage('Archive Artifacts') {
-       archive 'target/**'
+   stage('Archive and Stash Artifacts') {
+       archiveArtifacts artifacts: 'target/**', excludes: null, fingerprint: true, onlyIfSuccessful: true
+       stash includes: 'target/**', name: 'jekyllsite'
    }
 
 
 
    milestone label: 'start-deploy', ordinal: 1
    stage('Deploy') {
-
+        unstash 'jekyllsite'
+        
    }
 }
