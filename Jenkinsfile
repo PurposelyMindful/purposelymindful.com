@@ -7,11 +7,12 @@ node {
    stage ('Build') {
 
          if (isUnix()) {
-            sh "/usr/local/bin/bundle install"
+            sh "gem install bundle"
             sh "jekyll -version"
             sh "jekyll clean"
             sh "jekyll build"
          } else {
+             bat 'gem install bundle'
              bat 'bundle install'
              bat 'jekyll /version'
              bat 'jekyll clean'
