@@ -93,7 +93,7 @@ p {
 
 
 .jumbotron {
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0,0,0,1.3);
   color: #ffffff;
   border-radius: 5px;
   border: 0px;
@@ -106,7 +106,7 @@ p {
 
 
 .panel-default {
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(0,0,0,1);
 }
 
 .panel-body {
@@ -114,7 +114,7 @@ p {
 }
 
 .panel-heading {
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(0,0,0,1);
 }
 
 
@@ -128,7 +128,7 @@ p {
 
 
 .navbar-default {
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0,0,0,1);
   color: #ffffff;
   border-radius: 5px;
     border: 0px;
